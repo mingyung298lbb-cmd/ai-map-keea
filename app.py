@@ -133,15 +133,6 @@ def call_ai_json(system_prompt, user_prompt, temperature=0.0):
         raise ValueError("AI 응답이 JSON 객체가 아닙니다.")
     return result
 
-
-POLICY_FAMILIES={
-    "transport_cost":("교통비","교통 수당","교통수당","통근비","통근 수당","교통 보조","교통보조"),
-    "flex_work":("유연근무","유연 근무","유연제","시차출퇴근","시차 출퇴근","탄력근무","탄력 근무","선택근무","선택 근무"),
-    "parental_leave":("육아휴직","육아 휴직"),
-    "wage":("기본급","월급","임금","급여 인상","급여인상"),
-    "bonus":("성과급","상여금","인센티브"),
-}
-
 def policy_families(text):
     t=norm(text)
     return {name for name,terms in POLICY_FAMILIES.items() if any(norm(term) in t for term in terms)}
