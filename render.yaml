@@ -15,14 +15,13 @@ services:
         generateValue: true
       - key: DB_PATH
         value: /var/data/opinion_map.db
+      -
       - key: AI_PROVIDER
-        value: openai
-      - key: AI_BASE_URL
-        value: https://api.openai.com/v1
-      - key: AI_MODEL
-        value: gpt-4o-mini
-      - key: AI_API_KEY
-        sync: false
+        value: ollama
+      - key: OLLAMA_URL
+        value: https://실제-Ollama-서버주소/api/chat
+      - key: OLLAMA_MODEL
+        value: qwen2.5:3b
       - key: ADMIN_USERNAME
         sync: false
       - key: ADMIN_PASSWORD
